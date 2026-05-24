@@ -24,7 +24,7 @@ export default function Home() {
 
           <button
             type="button"
-            onClick={() => navigate('/admin/login')}
+            onClick={() => navigate(localStorage.getItem('token') ? '/admin/dashboard' : '/admin/login')}
             className="w-full py-3 px-6 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-sm font-medium transition-all duration-200 border border-white/20"
           >
             Acceso administrativo

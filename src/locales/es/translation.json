@@ -2,6 +2,7 @@
   "publishProperty": {
     "pageTitle": "Publica tu inmueble",
     "pageSubtitle": "Completa el formulario y un asesor se comunicará contigo para evaluar tu propiedad.",
+    "backToHome": "Inicio",
     "languageSelector": "EN",
     "sections": {
       "ownerData": "Datos del propietario",
@@ -55,7 +56,7 @@
       },
       "proposedExpectedPrice": {
         "label": "Precio esperado en COP (opcional)",
-        "placeholder": "Ej: 250000000"
+        "placeholder": "Ej: 250.000.000"
       }
     },
     "documentTypes": {
@@ -72,17 +73,35 @@
     "submit": "Enviar solicitud",
     "submitting": "Enviando...",
     "errors": {
-      "ownerFullName": { "required": "El nombre completo es obligatorio." },
+      "ownerFullName": {
+        "required": "El nombre completo es obligatorio.",
+        "maxLength": "El nombre no puede superar los 200 caracteres."
+      },
       "ownerEmail": {
         "required": "El correo electrónico es obligatorio.",
         "invalid": "Ingresa un correo electrónico válido."
       },
-      "ownerPhonePrimary": { "required": "El teléfono principal es obligatorio." },
+      "ownerPhonePrimary": {
+        "required": "El teléfono principal es obligatorio.",
+        "format": "Solo se permiten números, espacios y los caracteres + - ( ).",
+        "maxLength": "El teléfono no puede superar los 50 caracteres."
+      },
+      "ownerPhoneSecondary": {
+        "format": "Solo se permiten números, espacios y los caracteres + - ( ).",
+        "maxLength": "El teléfono no puede superar los 50 caracteres."
+      },
+      "ownerDocumentNumber": {
+        "maxLength": "El número de documento no puede superar los 40 caracteres."
+      },
       "proposedOfferType": { "required": "Debes seleccionar el tipo de oferta." },
-      "proposedLocation": { "required": "La ubicación del inmueble es obligatoria." },
+      "proposedLocation": {
+        "required": "La ubicación del inmueble es obligatoria.",
+        "maxLength": "La ubicación no puede superar los 300 caracteres."
+      },
       "proposedDescription": {
         "required": "La descripción es obligatoria.",
-        "minLength": "La descripción debe tener al menos 20 caracteres."
+        "minLength": "La descripción debe tener al menos 20 caracteres.",
+        "maxLength": "La descripción no puede superar los 2.000 caracteres."
       },
       "proposedAreaM2": {
         "min": "El área debe ser mayor a 0.",

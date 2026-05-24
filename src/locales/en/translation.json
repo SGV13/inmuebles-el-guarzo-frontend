@@ -2,6 +2,7 @@
   "publishProperty": {
     "pageTitle": "Publish your property",
     "pageSubtitle": "Fill out the form and an advisor will contact you to evaluate your property.",
+    "backToHome": "Home",
     "languageSelector": "ES",
     "sections": {
       "ownerData": "Owner information",
@@ -55,7 +56,7 @@
       },
       "proposedExpectedPrice": {
         "label": "Expected price in COP (optional)",
-        "placeholder": "e.g. 250000000"
+        "placeholder": "e.g. 250,000,000"
       }
     },
     "documentTypes": {
@@ -72,17 +73,35 @@
     "submit": "Submit request",
     "submitting": "Submitting...",
     "errors": {
-      "ownerFullName": { "required": "Full name is required." },
+      "ownerFullName": {
+        "required": "Full name is required.",
+        "maxLength": "Full name cannot exceed 200 characters."
+      },
       "ownerEmail": {
         "required": "Email address is required.",
         "invalid": "Please enter a valid email address."
       },
-      "ownerPhonePrimary": { "required": "Primary phone is required." },
+      "ownerPhonePrimary": {
+        "required": "Primary phone is required.",
+        "format": "Only numbers, spaces and the characters + - ( ) are allowed.",
+        "maxLength": "Phone number cannot exceed 50 characters."
+      },
+      "ownerPhoneSecondary": {
+        "format": "Only numbers, spaces and the characters + - ( ) are allowed.",
+        "maxLength": "Phone number cannot exceed 50 characters."
+      },
+      "ownerDocumentNumber": {
+        "maxLength": "Document number cannot exceed 40 characters."
+      },
       "proposedOfferType": { "required": "Please select an offer type." },
-      "proposedLocation": { "required": "Property location is required." },
+      "proposedLocation": {
+        "required": "Property location is required.",
+        "maxLength": "Location cannot exceed 300 characters."
+      },
       "proposedDescription": {
         "required": "Description is required.",
-        "minLength": "Description must be at least 20 characters."
+        "minLength": "Description must be at least 20 characters.",
+        "maxLength": "Description cannot exceed 2,000 characters."
       },
       "proposedAreaM2": {
         "min": "Area must be greater than 0.",

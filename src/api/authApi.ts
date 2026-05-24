@@ -1,7 +1,7 @@
 import { api } from "./axios";
 
 export const getCurrentUser = async (token: string) => {
-  const response = await api.get("/v1/me", {
+  const response = await api.get("/me", {
     headers: {
       Authorization: `Bearer ${token}`,
     },

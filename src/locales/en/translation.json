@@ -1,0 +1,109 @@
+{
+  "publishProperty": {
+    "pageTitle": "Publish your property",
+    "pageSubtitle": "Fill out the form and an advisor will contact you to evaluate your property.",
+    "languageSelector": "ES",
+    "sections": {
+      "ownerData": "Owner information",
+      "propertyData": "Property information"
+    },
+    "fields": {
+      "ownerFullName": {
+        "label": "Full name",
+        "placeholder": "e.g. Juan Carlos Pérez Gómez"
+      },
+      "ownerEmail": {
+        "label": "Email address",
+        "placeholder": "e.g. juan@email.com"
+      },
+      "ownerPhonePrimary": {
+        "label": "Primary phone",
+        "placeholder": "e.g. +57 300 123 4567"
+      },
+      "ownerPhoneSecondary": {
+        "label": "Secondary phone (optional)",
+        "placeholder": "e.g. +57 301 987 6543"
+      },
+      "ownerDocumentType": {
+        "label": "Document type (optional)",
+        "placeholder": "Select a type"
+      },
+      "ownerDocumentNumber": {
+        "label": "Document number (optional)",
+        "placeholder": "e.g. 1234567890"
+      },
+      "proposedOfferType": {
+        "label": "Offer type",
+        "placeholder": "Select an option",
+        "options": {
+          "SALE": "Sale",
+          "RENT": "Rent",
+          "BOTH": "Sale and Rent"
+        }
+      },
+      "proposedLocation": {
+        "label": "Property location",
+        "placeholder": "e.g. El Poblado, Medellín, Antioquia"
+      },
+      "proposedAreaM2": {
+        "label": "Area in m² (optional)",
+        "placeholder": "e.g. 85"
+      },
+      "proposedDescription": {
+        "label": "Property description",
+        "placeholder": "Describe the main features of your property (minimum 20 characters)"
+      },
+      "proposedExpectedPrice": {
+        "label": "Expected price in COP (optional)",
+        "placeholder": "e.g. 250000000"
+      }
+    },
+    "documentTypes": {
+      "CC": "National ID",
+      "CE": "Foreign ID",
+      "TI": "Identity Card",
+      "PP": "Passport",
+      "NIT": "NIT",
+      "RUT": "RUT"
+    },
+    "consent": {
+      "text": "I authorize the processing of my personal data in accordance with Colombian Law 1581 of 2012 and the privacy policy of Inmuebles El Guarzo."
+    },
+    "submit": "Submit request",
+    "submitting": "Submitting...",
+    "errors": {
+      "ownerFullName": { "required": "Full name is required." },
+      "ownerEmail": {
+        "required": "Email address is required.",
+        "invalid": "Please enter a valid email address."
+      },
+      "ownerPhonePrimary": { "required": "Primary phone is required." },
+      "proposedOfferType": { "required": "Please select an offer type." },
+      "proposedLocation": { "required": "Property location is required." },
+      "proposedDescription": {
+        "required": "Description is required.",
+        "minLength": "Description must be at least 20 characters."
+      },
+      "proposedAreaM2": {
+        "min": "Area must be greater than 0.",
+        "max": "Area cannot exceed 100,000 m²."
+      },
+      "proposedExpectedPrice": {
+        "min": "Minimum price is $300,000 COP.",
+        "max": "Price cannot exceed $50,000,000,000 COP."
+      },
+      "consent": { "required": "You must accept the data processing policy to continue." },
+      "captcha": { "required": "Please complete the security verification." },
+      "generic": "An error occurred while submitting your request. Please try again.",
+      "duplicate": "A request with these details has already been submitted recently.",
+      "validation": "Some of the entered data is invalid. Please review the form."
+    }
+  },
+  "publishSuccess": {
+    "title": "Request submitted successfully!",
+    "message": "We have received your request. An Inmuebles El Guarzo advisor will contact you in the coming days to evaluate your property.",
+    "referenceLabel": "Reference number",
+    "emailNotice": "You will also receive a confirmation to your email address.",
+    "backToHome": "Back to home"
+  }
+}

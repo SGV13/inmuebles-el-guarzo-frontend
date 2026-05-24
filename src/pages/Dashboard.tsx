@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { logout } from "../hooks/useAuth";
 
 export default function Dashboard() {
@@ -13,12 +14,21 @@ export default function Dashboard() {
         Usuario actual: {user}
       </p>
 
-      <button
-        onClick={logout}
-        className="bg-red-600 text-white px-4 py-2 rounded-lg"
+      <Link
+        to="/admin/publications"
+        className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg mb-4"
       >
-        Cerrar sesión
-      </button>
+        Ver solicitudes de publicación
+      </Link>
+
+      <div>
+        <button
+          onClick={logout}
+          className="bg-red-600 text-white px-4 py-2 rounded-lg"
+        >
+          Cerrar sesión
+        </button>
+      </div>
     </div>
   );
 }

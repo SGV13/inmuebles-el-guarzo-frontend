@@ -1,0 +1,109 @@
+{
+  "publishProperty": {
+    "pageTitle": "Publica tu inmueble",
+    "pageSubtitle": "Completa el formulario y un asesor se comunicará contigo para evaluar tu propiedad.",
+    "languageSelector": "EN",
+    "sections": {
+      "ownerData": "Datos del propietario",
+      "propertyData": "Datos del inmueble"
+    },
+    "fields": {
+      "ownerFullName": {
+        "label": "Nombre completo",
+        "placeholder": "Ej: Juan Carlos Pérez Gómez"
+      },
+      "ownerEmail": {
+        "label": "Correo electrónico",
+        "placeholder": "Ej: juan@correo.com"
+      },
+      "ownerPhonePrimary": {
+        "label": "Teléfono principal",
+        "placeholder": "Ej: +57 300 123 4567"
+      },
+      "ownerPhoneSecondary": {
+        "label": "Teléfono secundario (opcional)",
+        "placeholder": "Ej: +57 301 987 6543"
+      },
+      "ownerDocumentType": {
+        "label": "Tipo de documento (opcional)",
+        "placeholder": "Selecciona un tipo"
+      },
+      "ownerDocumentNumber": {
+        "label": "Número de documento (opcional)",
+        "placeholder": "Ej: 1234567890"
+      },
+      "proposedOfferType": {
+        "label": "Tipo de oferta",
+        "placeholder": "Selecciona una opción",
+        "options": {
+          "SALE": "Venta",
+          "RENT": "Arriendo",
+          "BOTH": "Venta y Arriendo"
+        }
+      },
+      "proposedLocation": {
+        "label": "Ubicación del inmueble",
+        "placeholder": "Ej: Barrio El Poblado, Medellín, Antioquia"
+      },
+      "proposedAreaM2": {
+        "label": "Área en m² (opcional)",
+        "placeholder": "Ej: 85"
+      },
+      "proposedDescription": {
+        "label": "Descripción del inmueble",
+        "placeholder": "Describe las características principales de tu inmueble (mínimo 20 caracteres)"
+      },
+      "proposedExpectedPrice": {
+        "label": "Precio esperado en COP (opcional)",
+        "placeholder": "Ej: 250000000"
+      }
+    },
+    "documentTypes": {
+      "CC": "Cédula de Ciudadanía",
+      "CE": "Cédula de Extranjería",
+      "TI": "Tarjeta de Identidad",
+      "PP": "Pasaporte",
+      "NIT": "NIT",
+      "RUT": "RUT"
+    },
+    "consent": {
+      "text": "Autorizo el tratamiento de mis datos personales conforme a la Ley 1581 de 2012 y la política de privacidad de Inmuebles El Guarzo."
+    },
+    "submit": "Enviar solicitud",
+    "submitting": "Enviando...",
+    "errors": {
+      "ownerFullName": { "required": "El nombre completo es obligatorio." },
+      "ownerEmail": {
+        "required": "El correo electrónico es obligatorio.",
+        "invalid": "Ingresa un correo electrónico válido."
+      },
+      "ownerPhonePrimary": { "required": "El teléfono principal es obligatorio." },
+      "proposedOfferType": { "required": "Debes seleccionar el tipo de oferta." },
+      "proposedLocation": { "required": "La ubicación del inmueble es obligatoria." },
+      "proposedDescription": {
+        "required": "La descripción es obligatoria.",
+        "minLength": "La descripción debe tener al menos 20 caracteres."
+      },
+      "proposedAreaM2": {
+        "min": "El área debe ser mayor a 0.",
+        "max": "El área no puede superar 100.000 m²."
+      },
+      "proposedExpectedPrice": {
+        "min": "El precio mínimo es $300.000 COP.",
+        "max": "El precio no puede superar $50.000.000.000 COP."
+      },
+      "consent": { "required": "Debes aceptar la política de tratamiento de datos para continuar." },
+      "captcha": { "required": "Por favor completa la verificación de seguridad." },
+      "generic": "Ocurrió un error al enviar tu solicitud. Por favor intenta de nuevo.",
+      "duplicate": "Ya existe una solicitud con estos datos registrada recientemente.",
+      "validation": "Algunos datos ingresados no son válidos. Revisa el formulario."
+    }
+  },
+  "publishSuccess": {
+    "title": "¡Solicitud enviada exitosamente!",
+    "message": "Hemos recibido tu solicitud. Un asesor de Inmuebles El Guarzo se comunicará contigo en los próximos días para evaluar tu propiedad.",
+    "referenceLabel": "Número de referencia",
+    "emailNotice": "También recibirás una confirmación en tu correo electrónico.",
+    "backToHome": "Volver al inicio"
+  }
+}

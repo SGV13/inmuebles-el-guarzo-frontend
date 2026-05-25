@@ -140,14 +140,14 @@ export default function PublishPropertyPage() {
 
     if (form.proposedAreaM2 !== '') {
       const area = Number(form.proposedAreaM2);
-      if (isNaN(area) || area < 1)
+      if (Number.isNaN(area) || area < 1)
         errs.proposedAreaM2 = t('publishProperty.errors.proposedAreaM2.min');
       else if (area > 100000)
         errs.proposedAreaM2 = t('publishProperty.errors.proposedAreaM2.max');
     }
     if (form.proposedExpectedPrice !== '') {
       const price = Number(form.proposedExpectedPrice);
-      if (isNaN(price) || price < 300000)
+      if (Number.isNaN(price) || price < 300000)
         errs.proposedExpectedPrice = t('publishProperty.errors.proposedExpectedPrice.min');
       else if (price > 50000000000)
         errs.proposedExpectedPrice = t('publishProperty.errors.proposedExpectedPrice.max');
@@ -176,6 +176,7 @@ export default function PublishPropertyPage() {
       proposedOfferType: form.proposedOfferType as ProposedOfferType,
       proposedLocation: form.proposedLocation.trim(),
       proposedDescription: form.proposedDescription.trim(),
+      consentAccepted: true,
       captchaToken,
     };
 

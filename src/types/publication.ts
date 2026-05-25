@@ -26,6 +26,7 @@ export interface SubmitPublicationRequestBody {
   proposedAreaM2?: number;
   proposedDescription: string;
   proposedExpectedPrice?: number;
+  consentAccepted: boolean;
   captchaToken: string;
 }
 

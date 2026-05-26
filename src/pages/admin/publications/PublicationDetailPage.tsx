@@ -6,6 +6,7 @@ import {
   approvePublicationRequest,
   rejectPublicationRequest,
 } from '../../../api/publicationsApi';
+import { getFeatureFlags, type FeatureFlags } from '../../../api/featureFlagsApi';
 import type {
   PublicationRequestDetail,
   PublicationRequestStatus,
@@ -48,6 +49,7 @@ export default function PublicationDetailPage() {
   const navigate = useNavigate();
 
   const [detail, setDetail] = useState<PublicationRequestDetail | null>(null);
+  const [flags, setFlags] = useState<FeatureFlags>({ showOwnerContact: true, showExpectedPrice: true });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -66,8 +68,12 @@ export default function PublicationDetailPage() {
     setIsLoading(true);
     setError(null);
     try {
-      const data = await getPublicationRequestDetail(id);
+      const [data, featureFlags] = await Promise.all([
+        getPublicationRequestDetail(id),
+        getFeatureFlags(),
+      ]);
       setDetail(data);
+      setFlags(featureFlags);
     } catch {
       setError('No se pudo cargar el detalle de la solicitud.');
     } finally {
@@ -76,11 +82,12 @@ export default function PublicationDetailPage() {
   }, [id]);
 
   useEffect(() => {
-  async function run() {
-    await fetchDetail();
-  }
-  void run();
-}, [fetchDetail]);
+    async function run() {
+      await fetchDetail();
+    }
+    void run();
+  }, [fetchDetail]);
+
   function showToast(message: string) {
     setToast(message);
     setTimeout(() => setToast(null), 3000);
@@ -222,9 +229,13 @@ export default function PublicationDetailPage() {
           </h2>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Nombre completo" value={detail.ownerFullName} />
-            <Field label="Correo electrónico" value={detail.ownerEmail} />
-            <Field label="Teléfono principal" value={detail.ownerPhonePrimary} />
-            <Field label="Teléfono secundario" value={detail.ownerPhoneSecondary} />
+            {flags.showOwnerContact && (
+              <>
+                <Field label="Correo electrónico" value={detail.ownerEmail} />
+                <Field label="Teléfono principal" value={detail.ownerPhonePrimary} />
+                <Field label="Teléfono secundario" value={detail.ownerPhoneSecondary} />
+              </>
+            )}
             <Field label="Tipo de documento" value={detail.ownerDocumentType} />
             <Field label="Número de documento" value={detail.ownerDocumentNumber} />
           </dl>
@@ -241,14 +252,16 @@ export default function PublicationDetailPage() {
             />
             <Field label="Ubicación" value={detail.proposedLocation} />
             <Field label="Área (m²)" value={detail.proposedAreaM2} />
-            <Field
-              label="Precio esperado"
-              value={
-                detail.proposedExpectedPrice
-                  ? `$${detail.proposedExpectedPrice.toLocaleString('es-CO')}`
-                  : undefined
-              }
-            />
+            {flags.showExpectedPrice && (
+              <Field
+                label="Precio esperado"
+                value={
+                  detail.proposedExpectedPrice
+                    ? `$${detail.proposedExpectedPrice.toLocaleString('es-CO')}`
+                    : undefined
+                }
+              />
+            )}
           </dl>
           <div className="mt-4">
             <dt className="text-xs text-gray-500 font-medium uppercase tracking-wide">
